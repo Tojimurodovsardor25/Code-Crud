@@ -1,17 +1,22 @@
 <header>
   <div class="container">
     <div class="columns is-vcentered is-multiline">
-      <div class="column logo is-12-mobile is-12-tablet is-6-desktop">
+      <div style="justify-content: space-between;"
+        class="column logo is-12-mobile is-12-tablet is-6-desktop d-flex align-items-center">
         {{#if navinfo}}
-          {{#each navinfo}}
-            <div class="img">
-              <img src="/images/{{navicon}}" alt="png" />
-            </div>
-            <a href="#!">{{navtitle}}</a>
-            <br /><br />
-            <a href="/create/edit/{{id}}">O'zgartirish</a>
-            <a href="/create/delete/{{id}}">O'chirish</a>
-          {{/each}}
+        {{#each navinfo}}
+        <div class="content-box d-flex align-items-center">
+          <div class="img" style="width: 100px;">
+            <img src="/images/{{img}}" alt="png" />
+          </div>
+          <a href="#!">{{navtitle}}</a>
+        </div>
+        <br /><br />
+        <div class="content-text">
+          <a href="/create/edit/{{id}}">O'zgartirish</a>
+          <a href="/create/delete/{{id}}">O'chirish</a>
+        </div>
+        {{/each}}
         {{/if}}
       </div>
       <!--<div class="cell navbar-burger small-1 hide-for-large" data-target="navMenu"><span></span><span></span><span></span></div>-->
@@ -19,26 +24,14 @@
         <form action="/search/" id="cse-search-box">
           <div class="field has-addons">
             <div class="control is-search">
-              <input
-                type="search"
-                placeholder="Поиск по сайту"
-                name="s"
-                autocomplete="off"
-                id="cse-search-input"
-                class="input"
-              />
-              <input
-                type="hidden"
-                name="cx"
-                value="partner-pub-0708135098984815:9970767379"
-              />
+              <input type="search" placeholder="Поиск по сайту" name="s" autocomplete="off" id="cse-search-input"
+                class="input" />
+              <input type="hidden" name="cx" value="partner-pub-0708135098984815:9970767379" />
               <input type="hidden" name="cof" value="FORID:10" />
               <input type="hidden" name="ie" value="UTF-8" />
             </div>
             <div class="control">
-              <button class="button is-info"><i
-                  class="icon-search"
-                ></i></button>
+              <button class="button is-info"><i class="icon-search"></i></button>
             </div>
           </div>
         </form>

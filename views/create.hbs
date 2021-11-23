@@ -1,18 +1,13 @@
 <div class="container">
   <div class="row">
     <h1>Qo'shish</h1>
-    <form action="/create/add" method="POST">
+    <form action="/create/add" method="POST" enctype="multipart/form-data">
       <label for="">Sayt logosi</label>
-      <input id="navicon" name="navicon" type="file" />
+      <input id="img" name="img" type="file" />
       <br>
       <br />
       <label for="">Sayt nomi</label>
-      <input
-        id="navtitle"
-        name="navtitle"
-        type="text"
-        placeholder="Sayt nomi"
-      />
+      <input id="navtitle" name="navtitle" type="text" placeholder="Sayt nomi" />
       <br /><br />
       <div class="cub">
         <a href="/">Bosh sahifa</a>
@@ -26,24 +21,13 @@
 <div class="container">
   <div class="row">
     <h1>O'zgartirish</h1>
-    <form action="/create/edit/{{navinfo.id}}" method="POST">
+    <form action="/create/edit/{{navinfo.id}}" method="POST" enctype="multipart/form-data">
       <label for="">Sayt logosi</label>
-      <input
-        id="navicon"
-        name="navicon"
-        type="file"
-        value="{{navinfo.navicon}}"
-      />
+      <input id="img" name="img" type="file" value="{{navinfo.img}}" />
       <br>
       <br />
       <label for="">Sayt nomi</label>
-      <input
-        id="navtitle"
-        name="navtitle"
-        type="text"
-        placeholder="Sayt nomi"
-        value="{{navinfo.navtitle}}"
-      />
+      <input id="navtitle" name="navtitle" type="text" placeholder="Sayt nomi" value="{{navinfo.navtitle}}" />
       <br /><br />
       <div class="cub">
         <a href="/">Bosh sahifa</a>

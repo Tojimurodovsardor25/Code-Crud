@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const NavInfoSchema = new Schema({
-  navicon: {
+  img: {
     type: String,
   },
   navtitle: {
