@@ -1,51 +1,73 @@
 <header>
-    <div class="container">
-        <div class="columns is-vcentered is-multiline">
-            <div class="column logo is-12-mobile is-12-tablet is-6-desktop">
-                <a href="/"><span class="t1">Web</span><span class="t2">Reference</span></a>
+  <div class="container">
+    <div class="columns is-vcentered is-multiline">
+      <div class="column logo is-12-mobile is-12-tablet is-6-desktop">
+        {{#if navinfo}}
+          {{#each navinfo}}
+            <div class="img">
+              <img src="/images/{{navicon}}" alt="png" />
             </div>
-            <!--<div class="cell navbar-burger small-1 hide-for-large" data-target="navMenu"><span></span><span></span><span></span></div>-->
-            <div class="column is-12-mobile is-12-tablet is-6-desktop search-site">
-                <form action="/search/" id="cse-search-box">
-                    <div class="field has-addons">
-                        <div class="control is-search">
-                            <input type="search" placeholder="Поиск по сайту" name="s" autocomplete="off"
-                                id="cse-search-input" class="input">
-                            <input type="hidden" name="cx" value="partner-pub-0708135098984815:9970767379">
-                            <input type="hidden" name="cof" value="FORID:10">
-                            <input type="hidden" name="ie" value="UTF-8">
-                        </div>
-                        <div class="control">
-                            <button class="button is-info"><i class="icon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
+            <a href="#!">{{navtitle}}</a>
+            <br /><br />
+            <a href="/create/edit/{{id}}">O'zgartirish</a>
+            <a href="/create/delete/{{id}}">O'chirish</a>
+          {{/each}}
+        {{/if}}
+      </div>
+      <!--<div class="cell navbar-burger small-1 hide-for-large" data-target="navMenu"><span></span><span></span><span></span></div>-->
+      <div class="column is-12-mobile is-12-tablet is-6-desktop search-site">
+        <form action="/search/" id="cse-search-box">
+          <div class="field has-addons">
+            <div class="control is-search">
+              <input
+                type="search"
+                placeholder="Поиск по сайту"
+                name="s"
+                autocomplete="off"
+                id="cse-search-input"
+                class="input"
+              />
+              <input
+                type="hidden"
+                name="cx"
+                value="partner-pub-0708135098984815:9970767379"
+              />
+              <input type="hidden" name="cof" value="FORID:10" />
+              <input type="hidden" name="ie" value="UTF-8" />
             </div>
-        </div>
+            <div class="control">
+              <button class="button is-info"><i
+                  class="icon-search"
+                ></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <nav id="navMenu" class="navbar">
-        <div class="container">
-            <ul class="menu">
-                <li><a href="/">Главная</a></li>
-                <li class="dropdown"><span>Справочники</span>
-                    <ul>
-                        <li><a href="/html">HTML</a></li>
-                        <li><a href="/css">CSS</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><span>Руководства</span>
-                    <ul>
-                        <li><a href="/layout">Вёрстка</a></li>
-                        <li><a href="/dev">Веб-технологии</a></li>
-                        <li><a href="/mobile">Мобильные приложения</a></li>
-                    </ul>
-                </li>
-                <li><a href="/recipe">Рецепты</a></li>
-                <li><a href="/course">Курсы</a></li>
-                <li><a href="/practice">Практика</a></li>
-                <li><a href="/individual">Самостоятельная</a></li>
-                <li><a href="/quiz">Тесты</a></li>
-            </ul>
-        </div>
-    </nav>
+  </div>
+  <nav id="navMenu" class="navbar">
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/">Главная</a></li>
+        <li class="dropdown"><span>Справочники</span>
+          <ul>
+            <li><a href="/html">HTML</a></li>
+            <li><a href="/css">CSS</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><span>Руководства</span>
+          <ul>
+            <li><a href="/layout">Вёрстка</a></li>
+            <li><a href="/dev">Веб-технологии</a></li>
+            <li><a href="/mobile">Мобильные приложения</a></li>
+          </ul>
+        </li>
+        <li><a href="/recipe">Рецепты</a></li>
+        <li><a href="/course">Курсы</a></li>
+        <li><a href="/practice">Практика</a></li>
+        <li><a href="/individual">Самостоятельная</a></li>
+        <li><a href="/quiz">Тесты</a></li>
+      </ul>
+    </div>
+  </nav>
 </header>
