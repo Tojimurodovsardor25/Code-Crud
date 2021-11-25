@@ -11,6 +11,7 @@ const port = 3000
 // const navinfoRouter = require("./routes/navinfo");
 const indexRouter = require('./routes/index')
 const createRouter = require('./routes/create')
+const footerinfoRouter = require('./routes/footerinfo')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,6 +42,7 @@ require('./helper/db')()
 
 app.use('/', indexRouter)
 app.use('/create', createRouter)
+app.use('/footerinfo', footerinfoRouter)
 
 app.listen(port, () => {
   console.log(`Express working on ${port} port`);

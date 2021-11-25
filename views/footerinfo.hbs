@@ -1,0 +1,74 @@
+<br><br><br>
+<hr>
+<h1>Foter ushun manbaa va ma'lumot qo'shish</h1>
+<div class="container">
+    <div class="container">
+        <h1>Footer uchun Qo'shish bo'limi</h1>
+        <div class="row">
+            <form action="/footerinfo/create/additations" method="POST">
+                <div class="manbaa" style="display: flex;justify-content: space-evenly;">
+                    <div class="manbaa-flex">
+                        <h5 for="">BOG'LANISH uchun manba qo'shish</h5>
+                        <br>
+                        <label for="">Ijtimoiy tarmoqlar haqida ma'lumot</label>
+                        <input id="siteTitle" name="siteTitle" type="text" />
+                        <br>
+                        <label for="">Manbaa nomi</label>
+                        <input id="manbaa1" name="manbaa1" type="text" />
+                        <label for="">Manbaa havolasi</label>
+                        <input id="link1" name="link1" type="text" />
+                        <br><br>
+                        <label for="">Manbaa nomi</label>
+                        <input id="manbaa2" name="manbaa2" type="text" />
+                        <label for="">Manbaa havolasi</label>
+                        <input id="link2" name="link2" type="text" />
+                        <br><br>
+                        <label for="">Manbaa nomi</label>
+                        <input id="manbaa3" name="manbaa3" type="text" />
+                        <label for="">Manbaa havolasi</label>
+                        <input id="link3" name="link3" type="text" />
+                        <br>
+                        <br />
+                        <br /><br />
+                    </div>
+                </div>
+                <div class="cub">
+                    <a href="/">Bosh sahifa</a>
+                    <input type="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <h1>Footer uchun tahrirlash bo'limi</h1>
+        <form action="/footerinfo/session/editations/{{footerinfo.id}}" method="POST">
+            <h3 for="">Bog'lanish uchun manbaani tahrirlash</h3>
+            <br>
+            <label for="">Ijtimoiy tarmoqlar haqida ma'lumot o'zgartirish</label>
+            <input id="siteTitle" name="siteTitle" type="text" value="{{footerinfo.siteTitle}}" />
+            <br>
+            <label for="">Manbaa nomi</label>
+            <input id="manbaa1" name="manbaa1" type="text" value="{{footerinfo.manbaa1}}" />
+            <label for="">Manbaa havolasi</label>
+            <input id="link1" name="link1" type="text" value="{{footerinfo.link1}}" />
+            <br><br>
+            <label for="">Manbaa nomi</label>
+            <input id="manbaa2" name="manbaa2" type="text" value="{{footerinfo.manbaa2}}" />
+            <label for="">Manbaa havolasi</label>
+            <input id="link2" name="link2" type="text" value="{{footerinfo.link2}}" />
+            <br><br>
+            <label for="">Manbaa nomi</label>
+            <input id="manbaa3" name="manbaa3" type="text" value="{{footerinfo.manbaa3}}" />
+            <label for="">Manbaa havolasi</label>
+            <input id="link3" name="link3" type="text" value="{{footerinfo.link3}}" />
+            <br>
+            <br />
+            <br /><br />
+            <div class="cub">
+                <a href="/">Bosh sahifa</a>
+                <input type="submit" />
+            </div>
+        </form>
+    </div>
+</div>

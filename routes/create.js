@@ -18,24 +18,29 @@ router.get('/', async (req, res) => {
 
 
 router.post('/add', fileUpload.single('img'), async (req, res) => {
-    console.log(req.body, "Ma`lumot olindi");
     const { navtitle } = req.body
-    console.log(req.file, 'req.file haqida ma`lumot ');
-    const img = req.file.filename
 
-    console.log(req.file.filename, "ma'lumot uchun req.file.filename");
-    const navinfo = new NavInfo({
-        navtitle,
-        img
-    })
-
-    await navinfo.save()
-    console.log(navinfo, "Saqlandi asosiy sahifaga qayt");
-    res.redirect('/')
+    if (req.file) {
+        const img = req.file.filename
+        const navinfo = new NavInfo({
+            navtitle,
+            img
+        })
+        await navinfo.save()
+        res.redirect('/')
+    } else {
+        const navinfo = new NavInfo({
+            navtitle,
+        })
+        await navinfo.save()
+        res.redirect('/')
+    }
+    // console.log(req.file.filename, "ma'lumot uchun req.file.filename");
+    // console.log(navinfo, "Saqlandi asosiy sahifaga qayt");
 })
 
 router.get('/edit/:id', async (req, res) => {
-    console.log(req.body, "O`zgartirish sahifasiga jo'natildi");
+    // console.log(req.body, "O`zgartirish sahifasiga jo'natildi");
     const navinfo = await NavInfo.findById(req.params.id)
 
     res.render('create', {
@@ -43,11 +48,11 @@ router.get('/edit/:id', async (req, res) => {
         layout: 'layout',
         navinfo
     })
-    console.log("O`zgartirish sahifasi");
+    // console.log("O`zgartirish sahifasi");
 })
 
 router.post('/edit/:id', fileUpload.single('img'), async (req, res) => {
-    console.log(req.body, "O`zgartirish haqida ma`lumot keldi");
+    // console.log(req.body, "O`zgartirish haqida ma`lumot keldi");
     const { img } = await NavInfo.findById(req.params.id)
     const navinfo = req.body
 
@@ -60,15 +65,15 @@ router.post('/edit/:id', fileUpload.single('img'), async (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(req.body, "Ma`lumot O'zgartirildi");
-            console.log(navinfo, "Saqlandi asosiy sahifaga qayt");
+            // console.log(req.body, "Ma`lumot O'zgartirildi");
+            // console.log(navinfo, "Saqlandi asosiy sahifaga qayt");
             res.redirect('/')
         }
     })
 
 })
 
-router.post('/delete/:id', async (req, res) => {
+router.get('/delete/:id', async (req, res) => {
     console.log(req.body, "O`chirish haqida ma`lumot keldi <<<<</. . . ./>>>>>");
 
     const { img } = await NavInfo.findById(req.params.id)

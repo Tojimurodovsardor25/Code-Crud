@@ -64,3 +64,121 @@
     </div>
   </nav>
 </header>
+
+<h1>Footer shu yer</h1>
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-12-mobile is-3-desktop">
+          <p class="logo">
+            {{#if navinfo}}
+            {{#each navinfo}}
+          <div class="content-box d-flex align-items-center">
+            <div class="img" style="width: 100px;">
+              <img src="/images/{{img}}" alt="png" />
+            </div>
+            <a href="#!">{{navtitle}}</a>
+          </div>
+          <br /><br />
+          <div class="content-text">
+            <a href="/create/edit/{{id}}">O'zgartirish</a>
+            <a href="/create/delete/{{id}}">O'chirish</a>
+          </div>
+          {{/each}}
+          {{/if}}
+          </p>
+          <p>Гл. редактор: Влад Мержевич</p>
+          <address>vlad@webref.ru</address>
+        </div>
+        {{#if navinfo}}
+        {{#each navinfo}}
+        <div class="content-box d-flex align-items-center">
+          <div class="img" style="width: 100px;">
+            <img src="/images/{{img}}" alt="png" />
+          </div>
+          <a href="#!">{{navtitle}}</a>
+        </div>
+        <br /><br />
+        <div class="content-text">
+          <a href="/create/edit/{{id}}">O'zgartirish</a>
+          <a href="/create/delete/{{id}}">O'chirish</a>
+        </div>
+        {{/each}}
+        {{/if}}
+        <section class="column is-12-mobile is-6-desktop">
+          <h3>О сайте</h3>
+          <p>На сайте находятся справочники и учебные курсы по различным веб-технологиям, а также руководства по вёрстке
+            веб-страниц и разработке мобильных приложений.</p>
+        </section>
+        <div class="column is-hidden-touch is-1-desktop counter">
+          <script src="/sites/all/themes/v4/js/li.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="columns">
+        <section class="column is-6-mobile is-3-desktop">
+          {{#if footerinfo}}
+          {{#each footerinfo}}
+          <h3>{{siteTitle}}</h3>
+          <ul id="community">
+            <li>
+              <a href="{{link1}}">{{manbaa1}}</a>
+            </li>
+            <li>
+              <a href="{{link2}}">{{manbaa2}}</a>
+            </li>
+            <li>
+              <a href="{{link3}}">{{manbaa3}}</a>
+            </li>
+          </ul>
+          <div class="content-text">
+            <a href="/footerinfo/session/editations/{{id}}">O'zgartirish</a>
+            <a href="/footerinfo/categoryfooter/delete/{{id}}">O'chirish</a>
+          </div>
+          {{/each}}
+          {{/if}}
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="hosting">
+    {{#if navinfo}}
+    {{#each navinfo}}
+    <div class="content-box d-flex align-items-center">
+      <div class="img" style="width: 100px;">
+        <img src="/images/{{img}}" alt="png" />
+      </div>
+      <a href="#!">{{navtitle}}</a>
+    </div>
+    <br /><br />
+    <div class="content-text">
+      <a href="/create/edit/{{id}}">O'zgartirish</a>
+      <a href="/create/delete/{{id}}">O'chirish</a>
+    </div>
+    {{/each}}
+    {{/if}}
+    <div class="container">
+      <p><a href="//beget.com/ru" rel="nofollow"><img src="/sites/all/themes/v4/img/beget.png" alt="Beget" width="100"
+            class="hosting-logo"></a>
+        Сайт WebReference.ru использует <a href="//beget.com/ru" rel="nofollow">VPS от компании Beget</a>.</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-12-mobile is-2-tablet is-2-desktop">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.ru" rel="nofollow"><img
+              alt="Лицензия Creative Commons" src="/sites/all/themes/v4/img/cc-by-nc.svg" width="120" height="42"></a>
+        </div>
+        <div class="column is-12-mobile is-10-tablet is-10-desktop">Все материалы сайта доступны по <a
+            href="http://creativecommons.org/licenses/by-nc/4.0/deed.ru" rel="nofollow">лицензии Creative Commons
+            «Attribution-NonCommercial» («Атрибуция — Некоммерческое использование») 4.0 Всемирная</a>, если не указано
+          иное.</div>
+      </div>
+    </div>
+  </div>
+</footer>
